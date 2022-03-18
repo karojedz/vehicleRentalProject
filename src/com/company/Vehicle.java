@@ -16,14 +16,43 @@ public abstract class Vehicle {
         this.tankCapacity = tankCapacity;
     }
 
-    @Override
-    public String toString() {
-        return "Vehicle{" +
-                "model='" + model + '\'' +
-                ", brand='" + brand + '\'' +
-                ", color=" + color +
-                ", fuel=" + fuel +
-                ", tankCapacity=" + tankCapacity +
-                '}';
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public FuelType getFuel() {
+        return fuel;
+    }
+
+    public void setFuel(FuelType fuel) {
+        this.fuel = fuel;
+    }
+
+    public double getTankCapacity() {
+        return tankCapacity;
+    }
+
+    public void setTankCapacity(double tankCapacity) {
+        this.tankCapacity = tankCapacity;
     }
 }
