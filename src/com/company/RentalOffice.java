@@ -31,7 +31,7 @@ public class RentalOffice {
         if (timeOfReturn==null) {
             System.out.println("This vehicle isn't rented.");
         } else {
-            System.out.println("This vehicle is rented.");
+            System.out.println("This vehicle is rented to " + timeOfReturn);
         }
 
     }
