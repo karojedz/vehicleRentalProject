@@ -1,5 +1,13 @@
 package com.company;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import java.time.LocalDateTime;
+import java.util.Objects;
+
+@Getter
+@Setter
 public abstract class Vehicle {
 
     private String model;
@@ -7,6 +15,9 @@ public abstract class Vehicle {
     private Color color;
     private FuelType fuel;
     private double tankCapacity;
+    private boolean rented = false;
+    private LocalDateTime returnTime = null;
+    private Person renter = null;
 
     Vehicle(String model, String brand, Color color, FuelType fuel, double tankCapacity) {
         this.model = model;
@@ -16,43 +27,13 @@ public abstract class Vehicle {
         this.tankCapacity = tankCapacity;
     }
 
-    public String getModel() {
-        return model;
+    @Override
+    public boolean equals(Object o) {
+        return this == o;
     }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    public FuelType getFuel() {
-        return fuel;
-    }
-
-    public void setFuel(FuelType fuel) {
-        this.fuel = fuel;
-    }
-
-    public double getTankCapacity() {
-        return tankCapacity;
-    }
-
-    public void setTankCapacity(double tankCapacity) {
-        this.tankCapacity = tankCapacity;
+    @Override
+    public int hashCode() {
+        return Objects.hash(getModel(), getBrand(), getColor(), getFuel(), getTankCapacity());
     }
 }
