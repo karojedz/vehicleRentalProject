@@ -5,7 +5,7 @@ public enum TimeOfRent {
 
     long days;
 
-    TimeOfRent(long days) {}
-
-
+    TimeOfRent(long days) {
+        this.days = days;
+    }
 }

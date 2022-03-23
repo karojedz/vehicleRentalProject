@@ -15,5 +15,4 @@ public class Address {
     private String apartmentNumber;
     private String zipCode;
     private String country;
-
 }

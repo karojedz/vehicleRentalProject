@@ -14,5 +14,4 @@ public class Person {
     private Address address;
     private String phoneNumber;
     private String emailAddress;
-
 }

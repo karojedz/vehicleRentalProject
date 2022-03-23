@@ -15,9 +15,6 @@ public abstract class Vehicle {
     private Color color;
     private FuelType fuel;
     private double tankCapacity;
-    private boolean rented = false;
-    private LocalDateTime returnTime = null;
-    private Person renter = null;
 
     Vehicle(String model, String brand, Color color, FuelType fuel, double tankCapacity) {
         this.model = model;
