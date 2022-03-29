@@ -4,21 +4,30 @@ public class Main {
 
     public static void main(String[] args) {
 
+        RentalOffice rentalOffice = new RentalOffice();
+
         Address address1 = new Address("Rzeszow","Wita", "5", "-", "35-102", "Poland");
         Person p = new Person("Karolina", "Jedziniak", address1, "87483", "jhf");
 
         Vehicle car = new Car("E46", "BMW", Color.BLUE, FuelType.PB, 60);
         System.out.println(car);
-        VehicleForRent carForRent = new VehicleForRent(car);
+        rentalOffice.newVehicleForRent(car);
 
         Vehicle motor = new Motor("Mod", "Br", Color.GREEN, FuelType.PB_LPG, 15);
-        VehicleForRent motorForRent = new VehicleForRent(motor);
+        rentalOffice.newVehicleForRent(motor);
 
-        RentalOffice.rentVehicle(p, carForRent, TimeOfRent.MONTH);
-        RentalOffice.rentVehicle(p, carForRent, TimeOfRent.WEEK);
-        RentalOffice.checkIfRented(carForRent);
-        RentalOffice.checkIfRented(motorForRent);
-        RentalOffice.returnVehicle(carForRent);
-        RentalOffice.checkIfRented(carForRent);
+
+        //to jakoś inaczej trzeba zrobić
+        VehicleForRent carForRent = rentalOffice.getGarage().get(0);
+        VehicleForRent motorForRent = rentalOffice.getGarage().get(1);
+
+        rentalOffice.rentVehicle(p, carForRent, TimeOfRent.MONTH);
+        rentalOffice.rentVehicle(p, carForRent, TimeOfRent.WEEK);
+        rentalOffice.checkIfRented(carForRent);
+        rentalOffice.checkIfRented(motorForRent);
+        rentalOffice.returnVehicle(carForRent);
+        rentalOffice.checkIfRented(carForRent);
+
+        System.out.println(rentalOffice.getGarage());
     }
 }

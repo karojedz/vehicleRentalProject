@@ -16,6 +16,5 @@ public class VehicleForRent {
 
     VehicleForRent(Vehicle vehicle) {
         setVehicle(vehicle);
-
     }
 }
