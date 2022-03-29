@@ -1,5 +1,13 @@
 package com.company;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import java.time.LocalDateTime;
+import java.util.Objects;
+
+@Getter
+@Setter
 public abstract class Vehicle {
 
     private String model;
@@ -17,13 +25,12 @@ public abstract class Vehicle {
     }
 
     @Override
-    public String toString() {
-        return "Vehicle{" +
-                "model='" + model + '\'' +
-                ", brand='" + brand + '\'' +
-                ", color=" + color +
-                ", fuel=" + fuel +
-                ", tankCapacity=" + tankCapacity +
-                '}';
+    public boolean equals(Object o) {
+        return this == o;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getModel(), getBrand(), getColor(), getFuel(), getTankCapacity());
     }
 }
